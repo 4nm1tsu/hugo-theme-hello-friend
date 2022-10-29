@@ -20,8 +20,12 @@
 
 
           {{ if $.Site.Params.ShowReadingTime }}
+            {{ $readTime := mul (div ( countrunes .Content) 400.0) 60 }}
+            {{ $minutes := math.Floor (div $readTime 60) }}
+            {{ $seconds := mod $readTime 60 }}
             <span class="post-read-time"
-              >— {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span
+              >— <span style="vertical-align: -3px;"><ion-icon name="timer-outline"></ion-icon></span> {{ $minutes }} {{ cond (eq $minutes 1.0) "minute" "minutes" }} and
+              {{ $seconds }} {{ cond (eq $seconds 1) "second" "seconds" }}.</span
             >
           {{ end }}
         </div>
