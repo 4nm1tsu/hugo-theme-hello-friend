@@ -24,8 +24,8 @@
             {{ $minutes := math.Floor (div $readTime 60) }}
             {{ $seconds := mod $readTime 60 }}
             <span class="post-read-time"
-              >— <span style="vertical-align: -3px;"><ion-icon name="timer-outline"></ion-icon></span> {{ $minutes }} {{ cond (eq $minutes 1.0) "minute" "minutes" }} and
-              {{ $seconds }} {{ cond (eq $seconds 1) "second" "seconds" }}.</span
+              >— <span style="vertical-align: -4px;"><ion-icon name="timer-outline"></ion-icon></span> Reading Time: {{ $minutes }} min
+              {{ $seconds }} sec</span
             >
           {{ end }}
         </div>
