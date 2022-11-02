@@ -20,7 +20,14 @@
 
 
           {{ if $.Site.Params.ShowReadingTime }}
-            {{ $readTime := mul (div ( countrunes .Content) 400.0) 60 }}
+            {{ $pattern := "(?s)```.*?```[\r\n]+" }}
+            {{ $codeBlock := findRE $pattern .RawContent }}
+            {{ $trimmedLength := countrunes (replaceRE $pattern "" .RawContent) }}
+            {{ $codeBlockLength := 0 }}
+            {{ range $codeBlock }}
+              {{ $codeBlockLength = add $codeBlockLength (countrunes .) }}
+            {{ end }}
+              {{ $readTime := mul (div (add $trimmedLength (mul $codeBlockLength 0.2)) 400.0) 60 }}
             {{ $minutes := math.Floor (div $readTime 60) }}
             {{ $seconds := mod $readTime 60 }}
             <span class="post-read-time"
