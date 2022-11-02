@@ -41,7 +41,7 @@
           {{ range $codeBlock }}
             {{ $codeBlockLength = add $codeBlockLength (countrunes .) }}
           {{ end }}
-          {{ $readTime := mul (div (add $trimmedLength (mul $codeBlockLength 0.2)) 400.0) 60 }}
+          {{ $readTime := mul (div (add $trimmedLength (mul $codeBlockLength $.Site.Params.codeBlockWeight)) $.Site.Params.runesPerMinute) 60 }}
           {{ $minutes := math.Floor (div $readTime 60) }}
           {{ $seconds := mod $readTime 60 }}
           <span class="post-read-time"
