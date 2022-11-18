@@ -34,7 +34,7 @@
         {{ end }}
 
         {{ if $.Site.Params.ShowReadingTime }}
-          {{ $pattern := "(?s)```.*?```[\r\n]+" }}
+          {{ $pattern := "(?s)(```|{{<(prism|github)).*?(```|(prism|github)>}})[\r\n]+" }}
           {{ $codeBlock := findRE $pattern .RawContent }}
           {{ $trimmedLength := countrunes (replaceRE $pattern "" .RawContent) }}
           {{ $codeBlockLength := 0 }}
