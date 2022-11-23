@@ -47,8 +47,16 @@ body.dark-theme {
 }
 
 /* MEDIA QUERIES */
+<<<<<<< HEAD
+$phone: 'max-width: 684px';
+$tablet: 'max-width: 900px';
+||||||| 89dbf19
+$phone: (max-width: 684px);
+$tablet: (max-width: 900px);
+=======
 $phone: "max-width: 684px";
 $tablet: "max-width: 900px";
+>>>>>>> master
 
 @mixin greater-icon($stroke-width: 3px, $width: .95rem, $height: 100%) {
   .greater-icon {
