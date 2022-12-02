@@ -135,6 +135,9 @@ code, kbd {
   font-size: .9rem;
   font-weight: normal;
   font-feature-settings: normal;
+  line-break: strict;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 
   code, kbd {
     background: transparent;
