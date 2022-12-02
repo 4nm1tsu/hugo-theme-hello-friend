@@ -38,11 +38,10 @@
                             {{ $codeBlockLength = add $codeBlockLength (countrunes .) }}
                           {{ end }}
                             {{ $readTime := mul (div (add $trimmedLength (mul $codeBlockLength $.Site.Params.codeBlockWeight)) $.Site.Params.runesPerMinute) 60 }}
-                          {{ $minutes := math.Floor (div $readTime 60) }}
+                          {{ $minutes := math.Ceil (div $readTime 60) }}
                           {{ $seconds := mod $readTime 60 }}
                           <span class="post-read-time"
-                            >— <span style="vertical-align: -4px;"><ion-icon name="timer-outline"></ion-icon></span> Reading Time: {{ $minutes }} min
-                            {{ $seconds }} sec</span
+                            >— <span style="vertical-align: -4px;"><ion-icon name="timer-outline"></ion-icon></span> {{ $minutes }} min read</span
                           >
                         {{ end }}
                       </div>
