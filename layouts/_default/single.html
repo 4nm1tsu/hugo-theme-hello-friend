@@ -55,16 +55,20 @@
     <div class="post-content">
       {{ if or .Params.Toc $.Site.Params.Toc }}
         {{ if ne .Params.Toc false }}
-        <h2 class="table-of-contents-heading">Table of Contents</h2>
-        <aside class="table-of-contents">{{ .TableOfContents }}
-        <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-          <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round"
-            stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
-        </svg>
-        </aside>
+      <div class="post-content-single">
+        <div>
+          <h2 class="table-of-contents-heading">Table of Contents</h2>
+          <aside class="table-of-contents">{{ .TableOfContents }}
+            <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+              <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round"
+                stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+            </svg>
+          </aside>
+        </div>
         {{ end }}
       {{ end }}
-      {{ .Content }}
+        <div class="left-column">{{ .Content }}</div>
+      </div>
     </div>
     {{ if eq .Type $.Site.Params.contentTypeName }}
       {{ if or .NextInSection .PrevInSection }}
