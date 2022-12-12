@@ -55,7 +55,7 @@
     <div class="post-content">
       {{ if or .Params.Toc $.Site.Params.Toc }}
         {{ if ne .Params.Toc false }}
-        <h2>Table of Contents</h2>
+        <h2 class="table-of-contents-heading">Table of Contents</h2>
         <aside class="table-of-contents">{{ .TableOfContents }}
         <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
           <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round"
