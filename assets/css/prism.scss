@@ -136,8 +136,8 @@ pre[data-line] {
 	padding: inherit 0;
 	margin-top: 1em; /* Same as .prism’s padding-top */
 
-	background: hsla(24, 20%, 50%,.08);
-	background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+	background: hsla(200, 20%, 80%,.08);
+	background: linear-gradient(to right, hsla(200, 20%, 80%,.1) 70%, hsla(200, 20%, 80%,0));
 
 	pointer-events: none;
 
@@ -158,13 +158,14 @@ pre[data-line] {
 
 	.line-highlight:before,
 	.line-highlight[data-end]:after {
+    display: none;
 		content: attr(data-start);
 		position: absolute;
 		top: .4em;
 		left: .6em;
 		min-width: 1em;
 		padding: 0 .5em;
-		background-color: hsla(24, 20%, 50%,.4);
+		background-color: hsla(200, 20%, 80%,.4);
 		color: hsl(24, 20%, 95%);
 		font: bold 65%/1.5 sans-serif;
 		text-align: center;
@@ -200,6 +201,10 @@ pre[id].linkable-line-numbers span.line-numbers-rows > span:before {
 }
 pre[id].linkable-line-numbers span.line-numbers-rows > span:hover:before {
 	background-color: rgba(128, 128, 128, .2);
+}
+
+pre[class*="language-"]:not(.line-numbers) {
+  padding-left: 1em;
 }
 
 pre[class*="language-"].line-numbers {
