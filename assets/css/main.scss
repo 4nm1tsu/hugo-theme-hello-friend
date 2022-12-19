@@ -135,9 +135,14 @@ code, kbd {
   font-size: .9rem;
   font-weight: normal;
   font-feature-settings: normal;
+  /*
   line-break: strict;
+  word-break: keep-all;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  */
+  // インラインコードブロックが長すぎるとレイアウト崩れるので注意
+  white-space: nowrap;
 
   code, kbd {
     background: transparent;
