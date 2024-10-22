@@ -71,6 +71,10 @@ a {
   word-break: break-all;
 }
 
+h1 > a {
+  word-break: break-word;
+}
+
 img {
   display: block;
   max-width: 100%;
